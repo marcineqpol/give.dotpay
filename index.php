@@ -134,11 +134,18 @@ add_action('give_gateway_dotpay', function($purchase_data)
         'status' => 'pending',
         'gateway' => 'dotpay'
     );
-
     $payment      = give_insert_payment($payment_data);
-    $dotpay_pin  = give_get_option('give_dotpay_pin_test');
+ if(give_get_option('give_dotpay_test') == 'enabled'){
+	$dotpay_pin  = give_get_option('give_dotpay_pin_test');
+} else {
+	$dotpay_pin  = give_get_option('give_dotpay_pin');
+}
     $api_version = 'dev';
-    $dotpay_id   = give_get_option('give_dotpay_id_test');
+if(give_get_option('give_dotpay_test') == 'enabled'){
+	$dotpay_id   = give_get_option('give_dotpay_id_test');
+} else {
+	$dotpay_id   = give_get_option('give_dotpay_id');
+}
     $amount      = $purchase_data['price'];
     $currency    = give_get_currency();
     $desc        = 'Darowizna-Form:'.intval($purchase_data['post_data']['give-form-id']).'-Give:'.$payment.'';

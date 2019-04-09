@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Give - DotPay płatności
- * Plugin URI: https://www.awwwesome.online
- * Description: Integracja Give i DotPay
- * Version: 1.0
- * Author: awwwesome
- * Author URI: https://www.awwwesome.online
+ * Plugin Name: Give - dotpay płatności
+ * Plugin URI: https://www.ngo360.pl
+ * Description: Integracja Give i dotpay
+ * Version: 1.0.4
+ * Author: NGO360
+ * Author URI: https://www.ngo360.pl
  **/
 
 if (!defined('ABSPATH')) {
